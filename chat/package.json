@@ -1,0 +1,19 @@
+{
+  "name": "socket-chat-example",
+  "version": "0.0.1",
+  "description": "my first socket.io app",
+  "keywords": [
+    "pubsub",
+    "redis"
+    ],
+  "dependencies": {
+    "express": "^4.15.2",
+    "mysql": "^2.18.1",
+    "socket.io": "^2.3.0",
+    "uuid": "^3.4.0",
+    "redis": "^3.0.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
