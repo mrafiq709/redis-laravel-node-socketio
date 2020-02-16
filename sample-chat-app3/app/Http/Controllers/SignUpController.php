@@ -8,22 +8,22 @@ use Illuminate\Support\Facades\Redis;
 class SignUpController extends Controller
 {
     public function index(){
-        return view('login');
+        return view('chat');
     }
 
     public function store(Request $request){
+
+        //echo "data";
         //echo "<pre>";
-        //print_r($_POST['login']);
-        //echo $request->get('login');
-
-        //return redirect('http://localhost:3000/')->with([ 'name' => $request->get('login') ]);
-    }
-
-    public function sendMessage(){
+        //print_r($_POST['data']);
+        //echo $request->get('data');
+        //exit;
 
         $redis = Redis::connection();
-        $redis->publish("test-channel", "This is the title of the message");
+        $redis->publish("my-channel", $request->get('data'));
 
-        return "Published";
+        // return redirect()->back();
+
+        //return redirect('http://localhost:3000/')->with([ 'name' => $request->get('login') ]);
     }
 }

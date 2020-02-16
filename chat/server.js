@@ -75,12 +75,16 @@ io.on("connection", function(socket) {
   // console.log("io connected");
 
   client.on("message", function(channel, message) {
-    console.log("channel: " + channel);
+    //console.log("channel: " + channel);
     console.log("message: " + message);
+
+    socket.emit('msg', message);
+    
   });
 
   client.subscribe("test-channel");
   client.subscribe("channel");
+  client.subscribe("my-channel");
 
   // TODO: Get the user list from database. And check user existance
   // var user = createUser({ userName: 'Rafiq' });

@@ -15,9 +15,3 @@ use Illuminate\Support\Facades\Redis;
 
 Route::get('/', 'SignUpController@index');
 Route::post('/', 'SignUpController@store')->name('store');
-
-Route::get('/send', 'SignUpController@sendMessage');
-
-Route::get('/publish', function(){
-    Redis::publish('channel', json_encode(['cash' => 'clear']));
-});
