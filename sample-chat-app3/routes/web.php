@@ -13,9 +13,9 @@
 
 use Illuminate\Support\Facades\Redis;
 
-Route::get('/', 'SignUpController@index');
-Route::post('/', 'SignUpController@save')->name('save');
+Route::get('/publish', 'SignUpController@index');
+Route::post('/publish', 'SignUpController@save')->name('save');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
